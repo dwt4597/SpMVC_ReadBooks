@@ -37,5 +37,13 @@ public class BookService {
 		return ret;
 	}
 	
+	public int update(BookVO bookVO) {
+		return dao.update(bookVO);
+	}
+	
+	public int deleteBook(long id) {
+		return dao.bookDelete(id);
+	}
+	
 	
 }

@@ -5,15 +5,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" 
+<meta name="viewport"
 	content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script>
 $(function(){
-	
 	$(".memo_tr").click(function(){
 		let id = $(this).attr("data-id")
 		$.ajax({
@@ -22,19 +20,11 @@ $(function(){
 			data : {id:id},
 			success:function(result){
 				$("#body").html(result)
-				
-				
 			}
-			
 		})
-		
 	})
-	
 })
 </script>
-
-
-
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include/menu.jspf" %>
@@ -49,7 +39,6 @@ $(function(){
 			<th>독서일자</th>
 			<th>별점</th>
 		 </tr>
-		 
 		 <c:choose>
 			<c:when test ="${empty BOOKS}">
 				<tr><td colspan=6>데이터가 없습니다.</td></tr>	
@@ -66,12 +55,10 @@ $(function(){
 				</tr>
 				</c:forEach>
 			</c:otherwise>
-	 </c:choose>
-	</table>
-	<button id="btn_memo">작성하기</button>
+		 </c:choose>
+		</table>
+
 	</article>
 </section>
-
-
 </body>
 </html>

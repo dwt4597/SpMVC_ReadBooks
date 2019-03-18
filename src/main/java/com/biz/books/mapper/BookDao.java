@@ -37,7 +37,7 @@ public interface BookDao {
 	public int update(BookVO bookVO);
 	
 	@Delete("delete from tbl_books where b_id=#{b_id}")
-	public void delete();
+	public int bookDelete(long b_id);
 	
 	
 }
